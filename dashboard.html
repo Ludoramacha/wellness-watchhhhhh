@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+<button onclick="logout()">Logout</button>
+</nav>
+
+<h2>Your Blood Pressure</h2>
+<h1 id="latestBP">--/--</h1>
+<h3 id="riskLevel">No reading</h3>
+
+<canvas id="bpChart"></canvas>
+
+<h3>Add Reading</h3>
+<input id="sys" type="number" placeholder="Systolic">
+<input id="dia" type="number" placeholder="Diastolic">
+<button onclick="addReading()">Save</button>
+
+<h3>Readings</h3>
+<div id="readingList"></div>
+
+<button onclick="connectSpecialist()">Connect to Specialist</button>
+
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
