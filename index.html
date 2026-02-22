@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA — Blood Pressure Monitor</title>
 
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="bottom-nav">
+  <button class="nav-item active" data-page="dashboard-page">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>Dashboard</span>
+  </button>
+</nav>
+
+<!-- DASHBOARD PAGE -->
+<section id="dashboard-page" class="page active">
+
+  <div class="page-top">
+    <h2>AURA</h2>
+  </div>
+
+  <div class="hero-card">
+    <div class="hero-content">
+      <div id="bpHeroValue">—/—</div>
+      <div id="bpHeroStatus">No reading yet</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Trend</h3>
+    <canvas id="bpChart"></canvas>
+  </div>
+
+  <div class="section">
+    <h3>Recent Readings</h3>
+    <div id="readingList"></div>
+  </div>
+
+  <button id="addReadingFab" class="fab">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+
+</section>
+
+<!-- MODAL -->
+<div id="readingModal" class="modal">
+  <div class="modal-content">
+    <h3>Add Reading</h3>
+    <input id="sysInput" type="number" placeholder="Systolic">
+    <input id="diaInput" type="number" placeholder="Diastolic">
+    <button id="saveReadingBtn">Save</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script src="dashboard.js"></script>
+
+</body>
+</html>
